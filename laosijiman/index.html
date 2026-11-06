@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>老司机漫画-漫画在线阅读_热门连载_分类检索</title>
+<meta name="description" content="老司机漫画在线阅读入口，按分类、连载状态与热度查找漫画作品，浏览更新动态、读者讨论与收藏入口，快速找到想看的漫画。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23151a2b'/%3E%3Cpath d='M16 18h12c6 0 10 4 10 10v18H26c-6 0-10-4-10-10z' fill='%23ffb648'/%3E%3Cpath d='M48 18H36c-6 0-10 4-10 10v18h12c6 0 10-4 10-10z' fill='%23ff6b5e'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#151a2b;
+    --ink-soft:#2b3348;
+    --paper:#f6f4ef;
+    --card:#ffffff;
+    --gold:#ffb648;
+    --coral:#ff6b5e;
+    --line:#e3ded4;
+    --muted:#6d6a63;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    line-height:1.75;
+    font-size:16px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img,svg{display:block;max-width:100%;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    background:var(--ink);
+    color:#f3f0e9;
+    position:sticky;top:0;z-index:50;
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .site-inner{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding:12px 0;flex-wrap:wrap;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.06rem;letter-spacing:.5px;}
+  .logo .mark{
+    width:38px;height:38px;border-radius:11px;background:linear-gradient(140deg,var(--gold),var(--coral));
+    display:grid;place-items:center;flex:0 0 auto;
+  }
+  .logo .mark svg{width:24px;height:24px;}
+  nav.main ul{
+    list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap;
+  }
+  nav.main a{
+    display:block;padding:7px 12px;border-radius:9px;font-size:.92rem;color:#d9d4c8;
+    transition:.18s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:rgba(255,255,255,.1);color:#fff;}
+  nav.main a.hot{color:var(--gold);font-weight:700;}
+
+  /* hero */
+  .hero{
+    background:
+      radial-gradient(900px 380px at 85% -10%,rgba(255,107,94,.22),transparent 70%),
+      radial-gradient(700px 320px at 5% 110%,rgba(255,182,72,.18),transparent 70%),
+      var(--ink);
+    color:#f4f1ea;
+    padding:52px 0 46px;
+    overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;}
+  .kicker{
+    display:inline-flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:2px;
+    color:var(--gold);border:1px solid rgba(255,182,72,.45);border-radius:999px;padding:4px 14px;
+    margin-bottom:18px;
+  }
+  h1{
+    font-size:clamp(1.9rem,4.4vw,3rem);
+    line-height:1.2;margin:0 0 16px;font-weight:900;letter-spacing:1px;
+  }
+  h1 em{font-style:normal;color:var(--gold);}
+  .hero p.lead{margin:0 0 24px;color:#cfcabd;max-width:34em;font-size:1rem;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;border-radius:11px;padding:11px 22px;
+    font-weight:700;font-size:.95rem;border:1px solid transparent;transition:.18s;
+  }
+  .btn-primary{background:var(--gold);color:#1b1200;}
+  .btn-primary:hover{background:#ffc768;}
+  .btn-ghost{border-color:rgba(255,255,255,.3);color:#f4f1ea;}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);}
+  .btn[aria-disabled="true"]{opacity:.85;cursor:default;pointer-events:none;}
+  .hero-stats{display:flex;gap:26px;margin-top:30px;flex-wrap:wrap;}
+  .hero-stats div strong{display:block;font-size:1.35rem;color:#fff;}
+  .hero-stats div span{font-size:.78rem;color:#a9a396;letter-spacing:1px;}
+  .hero-art{position:relative;}
+  .hero-art svg{width:100%;height:auto;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35));}
+
+  /* section base */
+  section{padding:56px 0;}
+  .sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin-bottom:26px;flex-wrap:wrap;}
+  .sec-head h2{
+    margin:0;font-size:clamp(1.25rem,2.4vw,1.6rem);font-weight:800;letter-spacing:.5px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .sec-head h2::before{
+    content:"";width:6px;height:1.1em;border-radius:3px;
+    background:linear-gradient(var(--gold),var(--coral));
+  }
+  .sec-head p{margin:0;color:var(--muted);font-size:.9rem;}
+
+  /* category grid */
+  .cats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .cat{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px 18px;transition:.2s;display:block;
+  }
+  .cat:hover,.cat:focus-visible{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 12px 24px rgba(21,26,43,.08);}
+  .cat .ico{
+    width:40px;height:40px;border-radius:11px;background:#fdf1dc;display:grid;place-items:center;margin-bottom:12px;
+  }
+  .cat .ico svg{width:22px;height:22px;}
+  .cat h3{margin:0 0 4px;font-size:1rem;font-weight:800;}
+  .cat p{margin:0;font-size:.83rem;color:var(--muted);line-height:1.6;}
+
+  /* list content */
+  .split{display:grid;grid-template-columns:1.6fr 1fr;gap:36px;align-items:start;}
+  .article-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 28px;
+  }
+  .article-card h3{margin:0 0 10px;font-size:1.12rem;}
+  .article-card h3:not(:first-child){margin-top:26px;}
+  .article-card p{margin:0;color:var(--ink-soft);font-size:.95rem;}
+
+  .rank{background:var(--ink);color:#f2efe8;border-radius:var(--radius);padding:22px 22px 12px;}
+  .rank h3{margin:0 0 14px;font-size:1rem;color:var(--gold);letter-spacing:1px;}
+  .rank ol{list-style:none;margin:0;padding:0;counter-reset:r;}
+  .rank li{
+    counter-increment:r;display:flex;gap:12px;align-items:baseline;padding:10px 0;
+    border-bottom:1px dashed rgba(255,255,255,.12);font-size:.92rem;
+  }
+  .rank li:last-child{border-bottom:0;}
+  .rank li::before{
+    content:counter(r);font-weight:900;color:var(--coral);font-size:.85rem;min-width:1.4em;
+  }
+  .rank li small{color:#9d9789;margin-left:auto;font-size:.76rem;white-space:nowrap;}
+
+  /* updates */
+  .updates{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .up-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+  }
+  .up-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,#fdf1dc,#ffe2dd);display:grid;place-items:center;}
+  .up-thumb svg{width:56px;height:56px;opacity:.9;}
+  .up-body{padding:16px 18px 18px;flex:1;display:flex;flex-direction:column;gap:6px;}
+  .up-body .tag{
+    align-self:flex-start;font-size:.72rem;letter-spacing:1px;color:#8a5a00;background:#fdf1dc;
+    border-radius:6px;padding:2px 8px;
+  }
+  .up-body h3{margin:0;font-size:1rem;}
+  .up-body p{margin:0;font-size:.86rem;color:var(--muted);flex:1;}
+  .up-meta{font-size:.78rem;color:#9a948a;display:flex;justify-content:space-between;gap:8px;}
+
+  /* search */
+  .search-band{
+    background:linear-gradient(120deg,#fff7e8,#ffeae6);
+    border:1px solid var(--line);border-radius:22px;padding:30px 28px;
+  }
+  .search-band h2{margin:0 0 6px;font-size:1.3rem;}
+  .search-band p{margin:0 0 18px;color:var(--muted);font-size:.9rem;}
+  .search-form{display:flex;gap:10px;flex-wrap:wrap;}
+  .search-form input{
+    flex:1 1 240px;min-width:0;padding:12px 16px;border-radius:11px;border:1px solid #e0d6c4;
+    font-size:.95rem;font-family:inherit;background:#fffdf9;color:var(--ink);
+  }
+  .search-form input:focus{outline:2px solid var(--gold);outline-offset:1px;}
+  .search-form button{
+    padding:12px 24px;border:0;border-radius:11px;background:var(--ink);color:#fff;
+    font-weight:700;font-size:.95rem;font-family:inherit;cursor:pointer;transition:.18s;
+  }
+  .search-form button:hover{background:var(--ink-soft);}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+  .chip{
+    font-size:.82rem;padding:5px 13px;border-radius:999px;background:#fff;border:1px solid #e0d6c4;
+    cursor:pointer;font-family:inherit;color:var(--ink-soft);transition:.16s;
+  }
+  .chip:hover,.chip.active{background:var(--gold);border-color:var(--gold);color:#1b1200;font-weight:700;}
+  .search-result{margin-top:16px;font-size:.9rem;color:var(--ink-soft);min-height:1.4em;}
+
+  /* faq */
+  .faq{display:grid;gap:12px;}
+  details{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;
+  }
+  details[open]{border-color:var(--gold);}
+  summary{
+    cursor:pointer;font-weight:700;font-size:.96rem;list-style:none;display:flex;justify-content:space-between;gap:12px;
+  }
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";color:var(--coral);font-weight:900;}
+  details[open] summary::after{content:"–";}
+  details p{margin:10px 0 0;font-size:.92rem;color:var(--ink-soft);}
+
+  /* footer */
+  footer.site{
+    background:var(--ink);color:#b9b4a8;padding:38px 0 26px;margin-top:20px;
+  }
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;}
+  footer.site .logo{color:#fff;margin-bottom:12px;}
+  footer.site p{margin:0;font-size:.86rem;line-height:1.8;}
+  footer.site h4{margin:0 0 10px;font-size:.86rem;color:#fff;letter-spacing:1px;}
+  footer.site ul{list-style:none;margin:0;padding:0;font-size:.86rem;}
+  footer.site ul li{margin-bottom:6px;}
+  footer.site ul a:hover{color:var(--gold);}
+  .copyright{
+    border-top:1px solid rgba(255,255,255,.1);margin-top:26px;padding-top:16px;
+    font-size:.78rem;color:#8b867b;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:30px;}
+    .hero-art{max-width:380px;margin:0 auto;}
+    .cats{grid-template-columns:repeat(2,1fr);}
+    .split{grid-template-columns:1fr;}
+    .updates{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .site-inner{padding:10px 0;}
+    nav.main ul{gap:0;}
+    nav.main a{padding:6px 9px;font-size:.85rem;}
+    .hero{padding:36px 0 34px;}
+    section{padding:40px 0;}
+    .cats{grid-template-columns:1fr;}
+    .article-card{padding:20px;}
+    .foot-grid{grid-template-columns:1fr;}
+    .hero-stats{gap:18px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-inner">
+    <a class="logo" href="#top" aria-label="老司机漫画首页">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14 16h13c6.6 0 11 4.4 11 11v21H27c-6.6 0-11-4.4-11-11V16z" fill="#151a2b"/>
+          <path d="M50 16H37c-6.6 0-11 4.4-11 11v21h13c6.6 0 11-4.4 11-11V16z" fill="#ffffff" fill-opacity=".92"/>
+          <circle cx="32" cy="32" r="4" fill="#ff6b5e"/>
+        </svg>
+      </span>
+      老司机漫画
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#categories">分类</a></li>
+        <li><a href="#updates">更新</a></li>
+        <li><a href="#rank">热榜</a></li>
+        <li><a href="#search">找漫画</a></li>
+        <li><a href="#faq">常见问题</a></li>
+        <li><a class="hot" href="#search">在线阅读</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="kicker">漫画在线阅读入口</span>
+        <h1>老司机漫画</h1>
+        <p class="lead">老司机漫画把分类浏览、连载更新与热度排行放在同一处：先按题材缩小范围，再看更新节奏决定追更顺序，最后进入作品页开始阅读。方向明确，比在列表里来回翻找更省时间。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#categories">按分类找漫画</a>
+          <a class="btn btn-ghost" href="#updates">查看今日更新</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>8</strong><span>题材分类</span></div>
+          <div><strong>3</strong><span>连载状态</span></div>
+          <div><strong>每日</strong><span>更新节奏</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 420 320" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="40" width="150" height="210" rx="12" fill="#ffb648" transform="rotate(-6 105 145)"/>
+          <rect x="196" y="52" width="150" height="210" rx="12" fill="#ff6b5e" transform="rotate(5 271 157)"/>
+          <rect x="112" y="86" width="168" height="196" rx="12" fill="#f6f4ef"/>
+          <rect x="132" y="108" width="128" height="62" rx="7" fill="#e8e2d4"/>
+          <rect x="132" y="182" width="128" height="10" rx="5" fill="#d8d1c0"/>
+          <rect x="132" y="202" width="96" height="10" rx="5" fill="#d8d1c0"/>
+          <rect x="132" y="222" width="112" height="10" rx="5" fill="#d8d1c0"/>
+          <circle cx="196" cy="139" r="16" fill="#151a2b"/>
+          <path d="M188 139l6 6 10-12" stroke="#ffb648" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="categories">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>按题材进入</h2>
+        <p>分类是筛选的第一步，点击即可跳到对应检索</p>
+      </div>
+      <div class="cats">
+        <a class="cat" href="#search" data-cat="热血">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg></span>
+          <h3>热血冒险</h3>
+          <p>主线推进快，适合连续追更。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="恋爱">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><path d="M12 20s-7-4.4-7-9a4 4 0 017-2.6A4 4 0 0119 11c0 4.6-7 9-7 9z"/></svg></span>
+          <h3>恋爱日常</h3>
+          <p>节奏舒缓，单话信息量适中。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="悬疑">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></span>
+          <h3>悬疑推理</h3>
+          <p>线索密集，适合一次多话阅读。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="搞笑">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14c1.2 1.6 2.6 2.4 4 2.4s2.8-.8 4-2.4"/><path d="M9 9.5h.01M15 9.5h.01"/></svg></span>
+          <h3>搞笑生活</h3>
+          <p>单元结构，随时可插入阅读。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="奇幻">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><path d="M12 3l2.2 5.4 5.8.5-4.4 3.8 1.3 5.7L12 15.5 7.1 18.4l1.3-5.7L4 8.9l5.8-.5L12 3z"/></svg></span>
+          <h3>奇幻设定</h3>
+          <p>世界观较大，建议从头读起。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="科幻">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><rect x="4" y="9" width="16" height="10" rx="3"/><path d="M12 9V5M8 14h.01M16 14h.01"/></svg></span>
+          <h3>科幻未来</h3>
+          <p>设定说明多，适合细读。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="校园">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-5 9 5-9 5-9-5z"/><path d="M7 11.5V17c0 1.7 2.2 3 5 3s5-1.3 5-3v-5.5"/></svg></span>
+          <h3>校园青春</h3>
+          <p>人物关系清楚，入门门槛低。</p>
+        </a>
+        <a class="cat" href="#search" data-cat="治愈">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="2" stroke-linecap="round"><path d="M12 20c-4 0-7-2.7-7-6.5C5 9 8 6 12 4c4 2 7 5 7 9.5C19 17.3 16 20 12 20z"/><path d="M12 20V9"/></svg></span>
+          <h3>治愈温情</h3>
+          <p>篇幅短，适合睡前阅读。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="updates" style="background:#fbf9f4;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>更新动态</h2>
+        <p>按最近更新时间排列，先看再决定是否追更</p>
+      </div>
+      <div class="updates">
+        <article class="up-card">
+          <div class="up-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="1.6"><path d="M4 5h7v14H4zM13 5h7v14h-7z"/></svg></div>
+          <div class="up-body">
+            <span class="tag">连载中</span>
+            <h3>今日更新 · 热血线</h3>
+            <p>主线章节继续推进，适合从上一话接续阅读，避免跳过剧情铺垫。</p>
+            <div class="up-meta"><span>更新于今日</span><span>第 N 话</span></div>
+          </div>
+        </article>
+        <article class="up-card">
+          <div class="up-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg></div>
+          <div class="up-body">
+            <span class="tag">双更</span>
+            <h3>周末双更 · 悬疑线</h3>
+            <p>线索在两话内集中回收，建议按顺序阅读，中途跳读容易漏掉伏笔。</p>
+            <div class="up-meta"><span>更新于昨日</span><span>第 N 话</span></div>
+          </div>
+        </article>
+        <article class="up-card">
+          <div class="up-thumb"><svg viewBox="0 0 24 24" fill="none" stroke="#c07a00" stroke-width="1.6"><path d="M5 19V7l7-3 7 3v12"/><path d="M9 19v-6h6v6"/></svg></div>
+          <div class="up-body">
+            <span class="tag">完结</span>
+            <h3>已完结 · 治愈短篇</h3>
+            <p>全篇篇幅较短，一次性读完不影响节奏，适合作为入门选择。</p>
+            <div class="up-meta"><span>状态：已完结</span><span>全 N 话</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="rank">
+    <div class="wrap split">
+      <div class="article-card">
+        <h3>老司机漫画怎么用更顺手</h3>
+        <p>进入老司机漫画后，先确定阅读目标：想追新就打开更新动态，想找特定题材就走分类，只想随便看看则从热榜进入。三种路径对应不同的时间投入，混用反而会来回跳转。</p>
+        <h3>连载与完结的判断</h3>
+        <p>连载中的作品更新不稳定，适合分段追；已完结作品可以按顺序一口气读完，剧情衔接更完整。老司机漫画在列表与详情处都会标注状态，阅读前先确认，能减少等待带来的中断感。</p>
+        <h3>分类与标签的区别</h3>
+        <p>分类回答“这是什么类型”，标签回答“里面有什么元素”。同一部作品可能同时属于热血与校园，因此分类只是缩小范围的第一步，真正定位还要靠标签叠加筛选，这也是老司机漫画检索时最常被忽略的一步。</p>
+        <h3>收藏与追更的关系</h3>
+        <p>把正在追的作品加入收藏，更新时优先处理，避免在长列表里反复查找。老司机漫画的收藏入口服务于长期阅读习惯，而不是一次性浏览，用得越久越能体现价值。</p>
+      </div>
+      <aside class="rank" aria-labelledby="rank-title">
+        <h3 id="rank-title">本周热度排序</h3>
+        <ol>
+          <li>热血冒险线 <small>更新稳定</small></li>
+          <li>悬疑推理线 <small>线索密集</small></li>
+          <li>恋爱日常线 <small>节奏舒缓</small></li>
+          <li>奇幻设定线 <small>世界观大</small></li>
+          <li>搞笑生活线 <small>单元结构</small></li>
+          <li>校园青春线 <small>入门友好</small></li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section id="search">
+    <div class="wrap">
+      <div class="search-band">
+        <h2>找一部想看的漫画</h2>
+        <p>输入题材、状态或作品名关键词，页面会给出对应的阅读建议。</p>
+        <form class="search-form" id="searchForm" role="search">
+          <label for="q" class="sr-only" style="position:absolute;left:-9999px;">搜索漫画</label>
+          <input id="q" name="q" type="search" placeholder="例如：热血、悬疑、已完结、校园" autocomplete="off">
+          <button type="submit">搜索</button>
+        </form>
+        <div class="chips" role="group" aria-label="热门检索词">
+          <button class="chip" type="button" data-q="热血">热血</button>
+          <button class="chip" type="button" data-q="悬疑">悬疑</button>
+          <button class="chip" type="button" data-q="恋爱">恋爱</button>
+          <button class="chip" type="button" data-q="已完结">已完结</button>
+          <button class="chip" type="button" data-q="校园">校园</button>
+        </div>
+        <p class="search-result" id="searchResult" aria-live="polite">从上面的分类或热榜进入，也能快速到达对应内容。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>阅读前常见疑问</h2>
+        <p>关于浏览方式与内容状态的说明</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>老司机漫画主要提供什么？</summary>
+          <p>提供按题材分类的漫画浏览入口、更新动态与热度排序，帮助读者先缩小范围，再进入具体作品阅读。</p>
+        </details>
+        <details>
+          <summary>怎样判断一部作品是否值得追？</summary>
+          <p>先看连载状态，再看更新节奏。连载中适合分段追更；已完结适合一次性读完。热度排序可作为参考，但不应替代个人题材偏好。</p>
+        </details>
+        <details>
+          <summary>分类和标签为什么要一起用？</summary>
+          <p>分类通常只覆盖主要类型，一部作品可能同时具备多种元素。先用分类缩小范围，再用标签叠加条件，定位会更准确。</p>
+        </details>
+        <details>
+          <summary>收藏有什么用？</summary>
+          <p>收藏用于长期追更，把正在阅读的作品集中管理，更新后可以直接从收藏进入，减少在长列表中反复查找的时间。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 16h13c6.6 0 11 4.4 11 11v21H27c-6.6 0-11-4.4-11-11V16z" fill="#ffb648"/>
+              <path d="M50 16H37c-6.6 0-11 4.4-11 11v21h13c6.6 0 11-4.4 11-11V16z" fill="#ff6b5e"/>
+            </svg>
+          </span>
+          老司机漫画
+        </div>
+        <p>老司机漫画以分类、更新与热度三条线索组织阅读入口，帮助读者快速找到想看的作品，并按自己的节奏持续追更。</p>
+      </div>
+      <div>
+        <h4>浏览入口</h4>
+        <ul>
+          <li><a href="#categories">题材分类</a></li>
+          <li><a href="#updates">更新动态</a></li>
+          <li><a href="#rank">热度排序</a></li>
+          <li><a href="#search">关键词检索</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>使用提示</h4>
+        <ul>
+          <li><a href="#faq">常见疑问</a></li>
+          <li><a href="#rank">连载与完结</a></li>
+          <li><a href="#categories">分类与标签</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <span>老司机漫画 · 漫画阅读入口</span>
+      <span>内容以实际页面展示为准</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var form = document.getElementById('searchForm');
+    var input = document.getElementById('q');
+    var result = document.getElementById('searchResult');
+    var map = {
+      '热血':'热血冒险线主线推进较快，建议从当前连载的最新话前两话开始接续。',
+      '悬疑':'悬疑推理线线索密集，建议按顺序阅读，避免跳读遗漏伏笔。',
+      '恋爱':'恋爱日常线节奏舒缓，单话信息量适中，适合碎片时间阅读。',
+      '搞笑':'搞笑生活线为单元结构，可从任意一话插入。',
+      '奇幻':'奇幻设定线世界观较大，建议从头读起。',
+      '科幻':'科幻未来线设定说明较多，适合细读。',
+      '校园':'校园青春线人物关系清楚，入门门槛较低。',
+      '治愈':'治愈温情线篇幅较短，适合睡前阅读。',
+      '已完结':'已完结作品可一次性按顺序读完，剧情衔接更完整。',
+      '连载':'连载中作品分段追更更合适，注意更新节奏。'
+    };
+    function run(q){
+      q = (q||'').trim();
+      if(!q){ result.textContent = '请输入题材、状态或作品名关键词。'; return; }
+      var hit = Object.keys(map).filter(function(k){ return q.indexOf(k) > -1; });
+      if(hit.length){
+        result.textContent = hit.map(function(k){ return map[k]; }).join(' ');
+      }else{
+        result.textContent = '暂未收录“' + q + '”的直接说明，可先到题材分类中缩小范围，或换用更常见的类型词再试。';
+      }
+    }
+    form.addEventListener('submit', function(e){ e.preventDefault(); run(input.value); });
+    document.querySelectorAll('.chip').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        input.value = btn.getAttribute('data-q');
+        run(input.value);
+      });
+    });
+    document.querySelectorAll('.cat').forEach(function(a){
+      a.addEventListener('click', function(){
+        var c = a.getAttribute('data-cat');
+        if(c){ input.value = c; run(c); }
+      });
+    });
+  })();
+</script>
+</body>
+</html>

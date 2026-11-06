@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鉴黄师官方入口-鉴黄师工作台入口_鉴黄师官方网址与审核岗位信息</title>
+<meta name="description" content="鉴黄师官方入口页面，汇集鉴黄师工作台登录入口、官方网址说明、审核岗位职责与常见问题，帮助有需要的访客快速识别正规入口并了解鉴黄师日常工作内容。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23122b3a'/%3E%3Cpath d='M32 12l14 6v12c0 10-6 17-14 22-8-5-14-12-14-22V18z' fill='none' stroke='%2338d6b0' stroke-width='3'/%3E%3Cpath d='M24 32l6 6 11-12' fill='none' stroke='%2338d6b0' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#12232e;
+  --ink-soft:#40525f;
+  --paper:#f4f7f8;
+  --card:#ffffff;
+  --line:#dbe4e8;
+  --teal:#137a68;
+  --teal-bright:#38d6b0;
+  --deep:#0d1f29;
+  --amber:#c8792c;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px;}
+
+/* Header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,31,41,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid rgba(56,214,176,.18);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;min-height:66px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;color:#eaf6f3;}
+.brand svg{flex:0 0 auto;display:block;}
+.brand-text{font-size:17px;font-weight:700;letter-spacing:.4px;white-space:nowrap;}
+nav.links{display:flex;gap:6px;flex-wrap:wrap;}
+nav.links a{
+  font-size:14px;color:#b9cdd4;padding:7px 12px;border-radius:8px;
+  transition:background .18s,color .18s;
+}
+nav.links a:hover,nav.links a:focus-visible{background:rgba(56,214,176,.14);color:#eafaf5;}
+
+/* Hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(56,214,176,.20),transparent 60%),
+    linear-gradient(160deg,#0d1f29 0%,#123544 58%,#0f2a33 100%);
+  color:#e9f5f2;
+  padding:56px 0 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;bottom:-120px;width:380px;height:380px;
+  border-radius:50%;border:1px solid rgba(56,214,176,.22);
+}
+.hero::before{
+  content:"";position:absolute;right:40px;top:40px;width:150px;height:150px;
+  border-radius:50%;background:radial-gradient(circle,rgba(56,214,176,.16),transparent 70%);
+}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;position:relative;z-index:2;}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:1.6px;color:var(--teal-bright);
+  border:1px solid rgba(56,214,176,.4);border-radius:999px;
+  padding:5px 13px;margin-bottom:20px;
+}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--teal-bright);display:inline-block;}
+h1{font-size:38px;line-height:1.28;font-weight:800;letter-spacing:.5px;margin-bottom:18px;}
+h1 span{color:var(--teal-bright);}
+.hero p.lead{font-size:15.5px;color:#c2d7dc;max-width:36em;margin-bottom:26px;}
+.cta-row{display:flex;gap:13px;flex-wrap:wrap;align-items:center;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:15px;font-weight:600;padding:12px 24px;border-radius:10px;
+  transition:transform .16s,box-shadow .16s,background .16s;
+}
+.btn-primary{background:var(--teal-bright);color:#08251f;box-shadow:0 8px 22px rgba(56,214,176,.28);}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(56,214,176,.36);}
+.btn-ghost{border:1px solid rgba(233,245,242,.35);color:#e9f5f2;}
+.btn-ghost:hover{background:rgba(233,245,242,.09);}
+.hero-card{
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(56,214,176,.26);
+  border-radius:var(--radius);
+  padding:24px;
+  backdrop-filter:blur(4px);
+}
+.hero-card h2{font-size:14px;letter-spacing:1.2px;color:var(--teal-bright);font-weight:700;margin-bottom:14px;}
+.hero-card ul{list-style:none;display:grid;gap:11px;}
+.hero-card li{display:flex;gap:10px;font-size:14px;color:#cfe0e4;line-height:1.6;}
+.hero-card li svg{flex:0 0 auto;margin-top:3px;}
+
+/* Stats strip */
+.strip{background:#fff;border-bottom:1px solid var(--line);}
+.strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;}
+.strip-item{padding:22px 18px;border-right:1px solid var(--line);text-align:center;}
+.strip-item:last-child{border-right:none;}
+.strip-item strong{display:block;font-size:22px;color:var(--teal);font-weight:800;letter-spacing:.3px;}
+.strip-item span{font-size:13px;color:var(--ink-soft);}
+
+/* Sections */
+section.block{padding:64px 0;}
+section.block.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.sec-head{max-width:44em;margin-bottom:34px;}
+.sec-tag{font-size:12.5px;letter-spacing:2px;color:var(--teal);font-weight:700;margin-bottom:10px;}
+.sec-head h2{font-size:27px;line-height:1.35;font-weight:800;letter-spacing:.3px;margin-bottom:12px;}
+.sec-head p{font-size:15px;color:var(--ink-soft);}
+
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;transition:transform .18s,border-color .18s,box-shadow .18s;
+}
+.card:hover{transform:translateY(-3px);border-color:#bcd8d2;box-shadow:0 14px 30px rgba(18,53,68,.08);}
+.card .ico{
+  width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+  background:#e6f5f1;margin-bottom:15px;
+}
+.card h3{font-size:17px;font-weight:700;margin-bottom:9px;letter-spacing:.2px;}
+.card p{font-size:14.3px;color:var(--ink-soft);}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;counter-reset:step;}
+.step{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px 22px;position:relative;
+}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:13px;font-weight:800;color:var(--teal-bright);
+  background:#0d1f29;border-radius:8px;padding:4px 9px;display:inline-block;margin-bottom:14px;
+}
+.step h3{font-size:16.5px;margin-bottom:8px;font-weight:700;}
+.step p{font-size:14.2px;color:var(--ink-soft);}
+
+/* List panel */
+.panel{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 28px;
+}
+.panel h3{font-size:18px;margin-bottom:14px;font-weight:700;}
+.panel ul{list-style:none;display:grid;gap:12px;}
+.panel li{
+  font-size:14.4px;color:var(--ink-soft);padding-left:20px;position:relative;
+}
+.panel li::before{
+  content:"";position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:2px;
+  background:var(--teal);transform:rotate(45deg);
+}
+.panel li b{color:var(--ink);font-weight:600;}
+
+/* FAQ */
+.faq{display:grid;gap:12px;}
+details{
+  background:#fff;border:1px solid var(--line);border-radius:12px;padding:0 20px;
+  transition:border-color .16s;
+}
+details[open]{border-color:#bcd8d2;}
+summary{
+  cursor:pointer;list-style:none;padding:17px 0;font-size:15.2px;font-weight:600;
+  display:flex;justify-content:space-between;align-items:center;gap:14px;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{
+  content:"+";font-size:20px;color:var(--teal);font-weight:400;line-height:1;flex:0 0 auto;
+  transition:transform .18s;
+}
+details[open] summary::after{content:"−";}
+details p{font-size:14.2px;color:var(--ink-soft);padding:0 0 18px;max-width:60em;}
+
+/* Notice */
+.notice{
+  background:linear-gradient(135deg,#0d1f29,#123544);color:#e3f1ee;
+  border-radius:var(--radius);padding:34px 32px;
+  display:grid;grid-template-columns:1fr auto;gap:26px;align-items:center;
+}
+.notice h2{font-size:21px;margin-bottom:9px;font-weight:800;}
+.notice p{font-size:14.2px;color:#b8cdd3;max-width:44em;}
+
+/* Footer */
+footer.site{
+  background:#0a1820;color:#93a9b1;padding:42px 0 30px;font-size:13.5px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:34px;padding-bottom:28px;border-bottom:1px solid rgba(147,169,177,.18);}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#dcebe7;font-weight:700;font-size:16px;margin-bottom:12px;}
+.foot-grid p{line-height:1.85;color:#84979f;}
+.foot-col h4{color:#cfe0e4;font-size:13.5px;margin-bottom:12px;font-weight:700;letter-spacing:.6px;}
+.foot-col ul{list-style:none;display:grid;gap:8px;}
+.foot-col a:hover{color:var(--teal-bright);}
+.copy{padding-top:20px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:#6f838b;font-size:12.5px;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:32px;}
+  h1{font-size:30px;}
+  .grid-3,.steps{grid-template-columns:1fr 1fr;}
+  .strip-inner{grid-template-columns:1fr 1fr;}
+  .strip-item:nth-child(2){border-right:none;}
+  .strip-item:nth-child(1),.strip-item:nth-child(2){border-bottom:1px solid var(--line);}
+  .foot-grid{grid-template-columns:1fr 1fr;}
+  .notice{grid-template-columns:1fr;}
+}
+@media (max-width:620px){
+  .nav-inner{justify-content:center;padding:10px 0;}
+  .brand-text{font-size:15px;}
+  nav.links{justify-content:center;}
+  h1{font-size:26px;}
+  .hero{padding:40px 0 46px;}
+  .grid-3,.grid-2,.steps,.foot-grid{grid-template-columns:1fr;}
+  section.block{padding:46px 0;}
+  .sec-head h2{font-size:22px;}
+  .strip-item{border-right:none !important;border-bottom:1px solid var(--line);}
+  .strip-item:last-child{border-bottom:none;}
+  .panel{padding:22px 20px;}
+  .notice{padding:26px 22px;}
+  .btn{width:100%;justify-content:center;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="返回页面顶部">
+      <svg width="34" height="34" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#122b3a"/>
+        <path d="M32 12l14 6v12c0 10-6 17-14 22-8-5-14-12-14-22V18z" fill="none" stroke="#38d6b0" stroke-width="3"/>
+        <path d="M24 32l6 6 11-12" fill="none" stroke="#38d6b0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="brand-text">鉴黄师官方入口</span>
+    </a>
+    <nav class="links" aria-label="主导航">
+      <a href="#entry">入口说明</a>
+      <a href="#duty">岗位职责</a>
+      <a href="#flow">使用流程</a>
+      <a href="#notice">风险提示</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow"><i></i>内容审核 · 入口导航</span>
+        <h1>鉴黄师官方入口</h1>
+        <p class="lead">这里整理鉴黄师官方入口的相关说明：工作台登录前的准备、审核岗位的职责边界、以及如何辨别正规网址。页面本身是入口指引页，不代替任何平台的实际登录页面。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#entry">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            查看入口说明
+          </a>
+          <a class="btn btn-ghost" href="#faq">常见问题</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="入口要点速览">
+        <h2>入口要点速览</h2>
+        <ul>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38d6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>入口只会出现在平台官方域名下，警惕相似拼写</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38d6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>登录前核对账号来源，不通过第三方链接提交密码</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38d6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>审核岗位需签署保密协议，工作内容不对外传播</span>
+          </li>
+          <li>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#38d6b0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+            <span>任何要求先付费的“入职通道”都不属于正规入口</span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <div class="strip-item"><strong>4 步</strong><span>入口核验顺序</span></div>
+      <div class="strip-item"><strong>3 类</strong><span>常见审核岗位</span></div>
+      <div class="strip-item"><strong>7×24</strong><span>内容审核轮班制</span></div>
+      <div class="strip-item"><strong>0 费用</strong><span>正规入口不收押金</span></div>
+    </div>
+  </div>
+
+  <!-- Entry -->
+  <section class="block" id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">ENTRY GUIDE</div>
+        <h2>鉴黄师官方入口怎么看：先认域名，再谈登录</h2>
+        <p>很多访客搜索鉴黄师官方入口，真实需求是找到可靠的登录位置。下面把入口拆成可执行的判断步骤，避免误入仿冒页面。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#137a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+          </div>
+          <h3>核对域名归属</h3>
+          <p>正规鉴黄师官方入口通常挂在平台主域名或明确的子域名下。若域名拼写与官方存在细微差别，或使用异常后缀，应视为可疑，不要输入账号信息。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#137a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+          </div>
+          <h3>确认传输安全</h3>
+          <p>登录页应使用加密连接，地址栏显示安全标识。若页面加载后仍提示证书异常，即便外观与鉴黄师官方入口高度相似，也不建议继续操作。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#137a68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v6c0 5-3.4 8.3-8 10-4.6-1.7-8-5-8-10V7z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg>
+          </div>
+          <h3>识别页面特征</h3>
+          <p>合规的鉴黄师官方入口会展示平台名称、隐私条款与账号协议，不会要求下载来源不明的插件，也不会以弹窗形式催促立即注册。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Duty -->
+  <section class="block alt" id="duty">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">ROLE</div>
+        <h2>鉴黄师岗位做什么，和入口的关系是什么</h2>
+        <p>入口只是工作起点，真正的日常在审核后台完成。理解岗位职责，有助于判断自己是否适合进入这一行。</p>
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <h3>内容分级与判定</h3>
+          <p>审核员依据平台规则对图文、短视频、直播截图进行分类，区分正常、低俗、违规等层级，并对存疑内容提交复核。判定标准由平台书面下发，个人不得自行放宽或加严。</p>
+        </article>
+        <article class="card">
+          <h3>工单流转与记录</h3>
+          <p>每条判定都会生成工单，记录处理时间、结论与依据。鉴黄师官方入口登录后的工作台，主要承载这类任务队列，轮班制下需保持处理时效。</p>
+        </article>
+        <article class="card">
+          <h3>隐私与保密义务</h3>
+          <p>审核过程中接触的内容属于敏感信息，不得截图、外传或用于个人用途。多数平台在入职时要求签署保密协议，并在工作设备上限制外发通道。</p>
+        </article>
+        <article class="card">
+          <h3>心理调适与轮换</h3>
+          <p>长期接触负面内容可能带来情绪负担，正规团队会设置轮岗、心理疏导与休息机制。这也是判断岗位是否规范的一个侧面，比入口外观更值得关注。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flow -->
+  <section class="block" id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">WORKFLOW</div>
+        <h2>从找到鉴黄师官方入口到开始审核</h2>
+        <p>把入口放进完整流程里看，才能判断哪一步该做什么、哪一步应当停下。</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <h3>获取官方地址</h3>
+          <p>通过平台公开渠道取得鉴黄师官方入口，不从陌生群聊、短链接或弹窗广告跳转。</p>
+        </div>
+        <div class="step">
+          <h3>完成身份登录</h3>
+          <p>使用平台分配的账号登录工作台，首次登录通常需要修改初始密码并绑定验证方式。</p>
+        </div>
+        <div class="step">
+          <h3>阅读规则与培训</h3>
+          <p>进入培训模块熟悉分级标准与操作规范，通过考核后才会开放正式审核队列。</p>
+        </div>
+      </div>
+      <div style="margin-top:22px" class="panel">
+        <h3>入口之外还需要准备什么</h3>
+        <ul>
+          <li><b>稳定网络与安静环境：</b>审核任务对响应时间有要求，环境干扰会直接影响判定质量。</li>
+          <li><b>实名与协议：</b>正规岗位需要完成实名认证，并确认保密条款与结算方式。</li>
+          <li><b>规则更新关注：</b>分级标准会随监管要求调整，登录后应优先查看公告栏的规则变更。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notice -->
+  <section class="block alt" id="notice">
+    <div class="wrap">
+      <div class="notice">
+        <div>
+          <h2>关于“收费入职”的明确提示</h2>
+          <p>正规的鉴黄师官方入口不会以任何名义收取押金、培训费或保证金。凡是在进入工作台之前要求转账、购买设备或缴纳会员费的渠道，均与官方入口无关。遇到此类情况，请停止操作并保留证据。</p>
+        </div>
+        <a class="btn btn-primary" href="#faq" style="white-space:nowrap">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg>
+          查看辨别方法
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-tag">FAQ</div>
+        <h2>鉴黄师官方入口常见问题</h2>
+        <p>以下回答围绕入口识别与岗位常识展开，不涉及任何具体平台的内部流程细节。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>鉴黄师官方入口和普通招聘页面有什么区别？</summary>
+          <p>招聘页面用于发布岗位信息与投递简历，鉴黄师官方入口则是已入职人员登录审核工作台的位置。两者目的不同，不能互相替代；看到要求填写简历的页面，不应误认为就是工作台入口。</p>
+        </details>
+        <details>
+          <summary>搜索到的第三个结果一定是鉴黄师官方入口吗？</summary>
+          <p>不一定。搜索结果排序受多种因素影响，仿冒站点也可能出现在前列。稳妥做法是对照平台公开公布的域名，再从官方渠道进入，而不是按排名先后判断。</p>
+        </details>
+        <details>
+          <summary>没有账号可以先进去看内容吗？</summary>
+          <p>审核工作台通常需要账号授权，未登录状态无法查看任务队列。若某个页面声称无需账号即可浏览审核内容，本身就值得怀疑，不建议继续使用。</p>
+        </details>
+        <details>
+          <summary>兼职审核也需要通过鉴黄师官方入口登录吗？</summary>
+          <p>是的。无论全职还是兼职，审核任务都在同一套工作台体系内流转，区别主要在排班与结算方式。入口本身不区分岗位类型，账号权限才决定可见范围。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="28" height="28" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#122b3a"/>
+            <path d="M32 12l14 6v12c0 10-6 17-14 22-8-5-14-12-14-22V18z" fill="none" stroke="#38d6b0" stroke-width="3"/>
+            <path d="M24 32l6 6 11-12" fill="none" stroke="#38d6b0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>鉴黄师官方入口</span>
+        </div>
+        <p>本页为入口指引与岗位常识说明页面，整理鉴黄师官方入口的识别要点与使用流程，不提供登录服务，也不代表任何平台官方立场。</p>
+      </div>
+      <div class="foot-col">
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#entry">入口说明</a></li>
+          <li><a href="#duty">岗位职责</a></li>
+          <li><a href="#flow">使用流程</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>相关阅读</h4>
+        <ul>
+          <li><a href="#notice">风险提示</a></li>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#top">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>内容以入口识别与岗位常识为主，具体规则以平台公布为准。</span>
+      <span>鉴黄师官方入口 · 页面指引</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

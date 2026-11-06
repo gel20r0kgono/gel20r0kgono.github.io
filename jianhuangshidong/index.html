@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鉴黄师动漫-鉴黄师动漫审核内容_鉴黄师动漫职业看点</title>
+<meta name="description" content="鉴黄师动漫主题首页，汇集鉴黄师动漫审核工作视角、动漫内容分级判断、常见违规画面识别与从业观察，帮助读者理解鉴黄师动漫这一职业与内容审核的真实面貌。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a1f2e'/%3E%3Ccircle cx='32' cy='30' r='15' fill='none' stroke='%23ffb547' stroke-width='4'/%3E%3Ccircle cx='32' cy='30' r='6' fill='%23ffb547'/%3E%3Crect x='16' y='50' width='32' height='4' rx='2' fill='%23ffb547'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1a1f2e;
+  --ink-soft:#3b4256;
+  --paper:#f6f4ef;
+  --card:#ffffff;
+  --amber:#e8912d;
+  --amber-soft:#fbe6c8;
+  --line:#e2ddd2;
+  --muted:#6f7484;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,244,239,.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:19px;letter-spacing:.5px;color:var(--ink)}
+.logo svg{flex:none}
+nav.main{display:flex;gap:26px;font-size:15px;color:var(--ink-soft)}
+nav.main a{padding:4px 0;border-bottom:2px solid transparent;transition:.2s}
+nav.main a:hover{color:var(--amber);border-color:var(--amber)}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:#fff;font-size:15px;font-weight:600;
+  padding:11px 22px;border-radius:999px;border:1px solid var(--ink);
+  transition:.2s;
+}
+.btn:hover{background:var(--amber);border-color:var(--amber);color:#1a1f2e}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:14px;cursor:pointer;color:var(--ink)}
+
+/* hero */
+.hero{padding:64px 0 56px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.5px;color:var(--amber);
+  background:var(--amber-soft);padding:5px 14px;border-radius:999px;font-weight:700;
+}
+h1{font-size:clamp(30px,4.4vw,48px);line-height:1.22;margin:20px 0 18px;letter-spacing:-.5px;font-weight:800}
+h1 em{font-style:normal;color:var(--amber)}
+.lead{font-size:16.5px;color:var(--ink-soft);max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
+.stat b{display:block;font-size:24px;font-weight:800;color:var(--ink)}
+.stat span{font-size:13px;color:var(--muted)}
+.hero-art{
+  background:var(--ink);border-radius:22px;padding:26px;
+  box-shadow:0 24px 50px -24px rgba(26,31,46,.5);
+}
+.hero-art svg{width:100%;height:auto;display:block}
+.hero-art p{color:#c9cdd8;font-size:13px;margin-top:14px;text-align:center}
+
+/* section base */
+section{padding:56px 0}
+.sec-head{max-width:640px;margin-bottom:34px}
+.sec-head h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.3px}
+.sec-head p{color:var(--muted);font-size:15px;margin-top:10px}
+
+/* what is */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:26px;
+}
+.card h3{font-size:18px;margin-bottom:10px;font-weight:700}
+.card p{font-size:15px;color:var(--ink-soft)}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tag{font-size:12.5px;padding:4px 11px;border-radius:999px;background:var(--amber-soft);color:#8a5212;font-weight:600}
+
+/* review grid */
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review-item{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;
+  transition:.22s;
+}
+.review-item:hover{transform:translateY(-3px);box-shadow:0 18px 34px -22px rgba(26,31,46,.4);border-color:var(--amber)}
+.ri-icon{
+  width:44px;height:44px;border-radius:12px;background:var(--ink);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+}
+.review-item h3{font-size:16.5px;margin-bottom:8px}
+.review-item p{font-size:14.5px;color:var(--ink-soft)}
+.review-item .lv{font-size:12px;color:var(--amber);font-weight:700;letter-spacing:.5px;margin-top:12px;display:block}
+
+/* workflow */
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
+.step::before{
+  counter-increment:step;content:"0" counter(step);
+  font-size:13px;font-weight:800;color:var(--amber);letter-spacing:1px;
+}
+.step h3{font-size:16px;margin:8px 0 8px}
+.step p{font-size:14px;color:var(--ink-soft)}
+
+/* faq */
+.faq{display:grid;gap:12px}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:0 22px;
+}
+details[open]{border-color:var(--amber)}
+summary{
+  cursor:pointer;list-style:none;padding:18px 0;font-weight:700;font-size:15.5px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:20px;color:var(--amber);font-weight:400;flex:none}
+details[open] summary::after{content:"–"}
+details p{padding:0 0 20px;font-size:14.5px;color:var(--ink-soft)}
+
+/* download band */
+.band{
+  background:var(--ink);border-radius:22px;padding:44px 40px;color:#fff;
+  display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;
+}
+.band h2{font-size:clamp(20px,2.4vw,26px);font-weight:800}
+.band p{color:#b9becb;font-size:14.5px;margin-top:8px;max-width:36em}
+.dl{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--amber);color:#1a1f2e;font-weight:800;font-size:15px;
+  padding:13px 26px;border-radius:999px;pointer-events:none;
+}
+.dl small{font-weight:600;font-size:12px;opacity:.75}
+
+/* footer */
+footer.site{padding:44px 0 34px;border-top:1px solid var(--line);margin-top:24px}
+.foot-grid{display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap}
+.foot-brand{max-width:320px}
+.foot-brand .logo{font-size:17px;margin-bottom:12px}
+.foot-brand p{font-size:13.5px;color:var(--muted)}
+.foot-links{display:flex;gap:52px;flex-wrap:wrap}
+.foot-links h4{font-size:13px;letter-spacing:1px;color:var(--muted);font-weight:700;margin-bottom:12px}
+.foot-links a{display:block;font-size:14px;color:var(--ink-soft);padding:3px 0}
+.foot-links a:hover{color:var(--amber)}
+.copy{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media(max-width:900px){
+  .hero-grid,.split{grid-template-columns:1fr;gap:34px}
+  .review-grid{grid-template-columns:1fr 1fr}
+  .flow{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  .bar{height:auto;padding:14px 0;flex-wrap:wrap}
+  nav.main{display:none;width:100%;order:3;flex-direction:column;gap:0;padding-top:10px;border-top:1px solid var(--line);margin-top:10px}
+  nav.main.open{display:flex}
+  nav.main a{padding:10px 0}
+  .burger{display:block}
+  .hero{padding:40px 0 34px}
+  .review-grid,.flow{grid-template-columns:1fr}
+  .band{padding:32px 24px}
+  section{padding:40px 0}
+  .hero-stats{gap:24px}
+  .foot-links{gap:32px}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="鉴黄师动漫 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1a1f2e"/>
+        <circle cx="32" cy="30" r="15" fill="none" stroke="#e8912d" stroke-width="4"/>
+        <circle cx="32" cy="30" r="6" fill="#e8912d"/>
+        <rect x="16" y="50" width="32" height="4" rx="2" fill="#e8912d"/>
+      </svg>
+      鉴黄师动漫
+    </a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mainnav">菜单</button>
+    <nav class="main" id="mainnav" aria-label="主导航">
+      <a href="#about">职业视角</a>
+      <a href="#review">审核要点</a>
+      <a href="#flow">工作流程</a>
+      <a href="#faq">常见疑问</a>
+    </nav>
+    <a class="btn ghost" href="#review">查看审核要点</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">内容审核 · 动漫方向</span>
+        <h1>鉴黄师动漫</h1>
+        <p class="lead">鉴黄师动漫，是把内容审核的目光落到动画与漫画作品上的一类岗位视角。它关心的不是作品好不好看，而是画面、台词与情节是否越过了平台的内容边界。这里从审核员的日常出发，拆解鉴黄师动漫在判断、分级与复核环节的真实工作方式。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#review">进入审核要点</a>
+          <a class="btn ghost" href="#flow">了解工作流程</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>3 类</b><span>常见画面风险</span></div>
+          <div class="stat"><b>4 步</b><span>单条内容处理链路</span></div>
+          <div class="stat"><b>2 级</b><span>初审与复核分工</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 360 260" role="img">
+          <rect x="20" y="26" width="320" height="188" rx="14" fill="#242b3d"/>
+          <rect x="36" y="44" width="120" height="8" rx="4" fill="#3c455c"/>
+          <rect x="36" y="60" width="76" height="8" rx="4" fill="#3c455c"/>
+          <rect x="36" y="92" width="132" height="100" rx="8" fill="#2f3750"/>
+          <circle cx="102" cy="130" r="16" fill="none" stroke="#e8912d" stroke-width="3"/>
+          <path d="M92 144 L112 144 L118 172 L86 172 Z" fill="#e8912d" opacity=".85"/>
+          <rect x="186" y="92" width="138" height="14" rx="7" fill="#3c455c"/>
+          <rect x="186" y="116" width="112" height="14" rx="7" fill="#3c455c"/>
+          <rect x="186" y="140" width="134" height="14" rx="7" fill="#3c455c"/>
+          <rect x="186" y="164" width="86" height="14" rx="7" fill="#e8912d"/>
+          <rect x="36" y="204" width="288" height="10" rx="5" fill="#2a3147"/>
+          <circle cx="52" cy="209" r="5" fill="#e8912d"/>
+          <rect x="66" y="205" width="70" height="8" rx="4" fill="#3c455c"/>
+        </svg>
+        <p>审核台示意：画面、台词与标签逐项比对</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>鉴黄师动漫在做什么</h2>
+        <p>把“鉴黄”这件事放到动漫语境里，判断依据会变得更细：静态画面只是其中一层，分镜节奏、台词暗示与作品标签同样影响结论。</p>
+      </div>
+      <div class="split">
+        <div class="card">
+          <h3>不只是看画面</h3>
+          <p>动漫作品的表现手法依赖分镜与留白。鉴黄师动漫在审核时，需要结合前后镜头判断某个画面是否构成暗示，而不是孤立地看待单帧截图。同一构图放在日常场景与亲密场景中，结论往往并不相同。</p>
+          <div class="tag-row">
+            <span class="tag">分镜连贯性</span>
+            <span class="tag">台词上下文</span>
+            <span class="tag">作品标签</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>依据来自规则而非喜好</h3>
+          <p>鉴黄师动漫的判断以平台内容规范与分级标准为准绳。审核员个人的审美偏好不进入结论，遇到边界模糊的片段，通常提交复核或标注存疑，由更资深的同事给出统一口径，保证同类内容处理一致。</p>
+          <div class="tag-row">
+            <span class="tag">统一口径</span>
+            <span class="tag">存疑标注</span>
+            <span class="tag">分级标准</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW POINTS -->
+  <section id="review">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>鉴黄师动漫的审核要点</h2>
+        <p>下面三类是动漫内容审核中出现频率较高的风险方向。它们并不等于违规结论，而是需要审核员停下来多看几眼的位置。</p>
+      </div>
+      <div class="review-grid">
+        <article class="review-item">
+          <div class="ri-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8912d" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="15" rx="2"/><path d="M8 22h8"/><circle cx="12" cy="11" r="3"/></svg>
+          </div>
+          <h3>人物暴露与姿态</h3>
+          <p>服装覆盖程度、身体姿态与镜头角度是最直观的一层。鉴黄师动漫会重点关注特写镜头与衣料透视表现，判断是否超出平台允许范围。</p>
+          <span class="lv">风险层级 · 高</span>
+        </article>
+        <article class="review-item">
+          <div class="ri-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8912d" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <h3>台词与暗示</h3>
+          <p>动漫常用对白承载暗示性内容。审核员需要结合语境判断台词是否构成低俗表达，尤其关注双关语与字幕翻译差异带来的歧义。</p>
+          <span class="lv">风险层级 · 中</span>
+        </article>
+        <article class="review-item">
+          <div class="ri-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e8912d" stroke-width="2" stroke-linecap="round"><path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/></svg>
+          </div>
+          <h3>剧情走向与标签</h3>
+          <p>作品简介、分类标签与整体剧情走向共同决定分级建议。鉴黄师动漫在整季审看时，会留意单集片段是否与作品标称定位存在偏差。</p>
+          <span class="lv">风险层级 · 中</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section id="flow">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>一条动漫内容的处理链路</h2>
+        <p>从进入队列到得出结论，鉴黄师动漫的日常工作围绕四个环节展开，每个环节都有对应的记录与交接要求。</p>
+      </div>
+      <div class="flow">
+        <div class="step">
+          <h3>进入队列</h3>
+          <p>新上架或用户举报的内容按优先级进入审核队列，系统附带作品标签与历史处理记录。</p>
+        </div>
+        <div class="step">
+          <h3>逐段审看</h3>
+          <p>审核员按分镜顺序观看，对可疑片段打点标注，记录时间码与判断依据，避免脱离语境下结论。</p>
+        </div>
+        <div class="step">
+          <h3>分级判定</h3>
+          <p>依据内容规范给出通过、限流或下架建议，边界模糊的片段标记存疑并转交复核。</p>
+        </div>
+        <div class="step">
+          <h3>复核归档</h3>
+          <p>复核人员统一口径后归档结论，同步更新作品标签，为后续同类内容提供参照。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>关于鉴黄师动漫的常见疑问</h2>
+        <p>这些问题来自对鉴黄师动漫这一岗位的好奇，回答尽量贴近审核工作的实际情形。</p>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>鉴黄师动漫是只看动画，还是也包括漫画？</summary>
+          <p>实际工作中两者都会涉及。动画侧重分镜与动态节奏，漫画侧重画面构图与文字气泡，审核员需要按媒介特点调整判断方式，但依据的内容规范是一致的。</p>
+        </details>
+        <details>
+          <summary>判断标准会不会因人而异？</summary>
+          <p>鉴黄师动漫的结论以平台规范为准，个人偏好不进入判定。为保证一致性，边界内容会进入复核流程，形成统一口径后再覆盖到同类作品。</p>
+        </details>
+        <details>
+          <summary>审核员需要具备动漫方面的知识吗？</summary>
+          <p>需要一定的基础。了解常见画风、分镜语言与作品分类，有助于判断某个画面是风格化表达还是刻意暗示，也能减少误判带来的申诉。</p>
+        </details>
+        <details>
+          <summary>被举报的内容会怎样处理？</summary>
+          <p>举报内容会进入队列优先审看。鉴黄师动漫的审核员结合原始片段与举报理由给出结论，处理结果与依据会记录归档，便于后续追溯。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD BAND -->
+  <section>
+    <div class="wrap">
+      <div class="band">
+        <div>
+          <h2>审核要点速查卡</h2>
+          <p>把鉴黄师动漫日常比对的三类风险点与四步处理链路整理成一页速查卡，方便在审看时随手对照。</p>
+        </div>
+        <a class="dl" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1a1f2e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+          下载 <small>PDF</small>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo">
+          <svg width="26" height="26" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1a1f2e"/>
+            <circle cx="32" cy="30" r="15" fill="none" stroke="#e8912d" stroke-width="4"/>
+            <circle cx="32" cy="30" r="6" fill="#e8912d"/>
+            <rect x="16" y="50" width="32" height="4" rx="2" fill="#e8912d"/>
+          </svg>
+          鉴黄师动漫
+        </div>
+        <p>从审核员视角理解动漫内容分级与边界判断，鉴黄师动漫持续关注这一岗位的实际工作方式。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <h4>内容</h4>
+          <a href="#about">职业视角</a>
+          <a href="#review">审核要点</a>
+          <a href="#flow">工作流程</a>
+        </div>
+        <div>
+          <h4>问答</h4>
+          <a href="#faq">常见疑问</a>
+          <a href="#top">回到顶部</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>鉴黄师动漫 · 内容审核视角的主题首页</span>
+      <span>页面内容用于介绍岗位工作方式，不构成具体作品评级依据</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('burger'),n=document.getElementById('mainnav');
+  b.addEventListener('click',function(){
+    var open=n.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  n.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click',function(){n.classList.remove('open');b.setAttribute('aria-expanded','false');});
+  });
+})();
+</script>
+</body>
+</html>

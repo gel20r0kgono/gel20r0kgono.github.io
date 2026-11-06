@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>鉴黄师-鉴黄师工作内容_内容审核岗位职责与职业问答</title>
+<meta name="description" content="鉴黄师是做什么的？这里讲清鉴黄师的日常工作内容、审核标准、岗位要求、职业压力与常见疑问，帮助想了解鉴黄师职业的人建立清晰认知。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a2338'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%23f0b429' stroke-width='4'/%3E%3Ccircle cx='32' cy='32' r='6' fill='%23f0b429'/%3E%3Cpath d='M12 32h10M42 32h10' stroke='%23f0b429' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#1a2338;
+  --ink-soft:#3d4760;
+  --paper:#f6f5f1;
+  --card:#ffffff;
+  --accent:#f0b429;
+  --accent-deep:#c98f0f;
+  --line:#e2e0d8;
+  --muted:#6b7280;
+  --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.75;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img,svg{display:block;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px;}
+
+/* header */
+header.site{
+  position:sticky;top:0;z-index:50;
+  background:rgba(26,35,56,.97);
+  color:#f4f3ee;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(6px);
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;padding:13px 0;
+  flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:700;font-size:19px;letter-spacing:.5px;}
+.brand .logo-mark{
+  width:38px;height:38px;border-radius:11px;
+  background:linear-gradient(150deg,#2c3a5c,#141c2e);
+  border:1px solid rgba(240,180,41,.45);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+nav.main ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap;}
+nav.main a{
+  display:inline-block;padding:6px 12px;border-radius:9px;
+  font-size:14.5px;color:#d8dbe4;transition:.2s;
+}
+nav.main a:hover,nav.main a:focus{background:rgba(240,180,41,.16);color:var(--accent);}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(240,180,41,.16),transparent 62%),
+    linear-gradient(165deg,#1a2338 0%,#232f4a 62%,#2b3856 100%);
+  color:#f4f3ee;
+  padding:64px 0 58px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;right:-90px;bottom:-120px;
+  width:340px;height:340px;border-radius:50%;
+  border:1px solid rgba(240,180,41,.22);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:46px;align-items:center;position:relative;z-index:2;}
+.hero .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;letter-spacing:1.6px;color:var(--accent);
+  border:1px solid rgba(240,180,41,.4);border-radius:99px;
+  padding:4px 14px;margin-bottom:20px;
+}
+h1{
+  font-size:clamp(34px,5.2vw,52px);
+  line-height:1.18;font-weight:800;letter-spacing:1px;
+  margin-bottom:18px;
+}
+.hero p.lead{
+  font-size:16.5px;color:#cfd4e0;max-width:33em;margin-bottom:28px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:11px 24px;border-radius:11px;font-size:15px;font-weight:600;
+  transition:.2s;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:#20180a;}
+.btn-primary:hover{background:#ffc63f;transform:translateY(-1px);}
+.btn-ghost{border-color:rgba(255,255,255,.3);color:#f4f3ee;}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+.hero-art{
+  background:rgba(255,255,255,.045);
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:20px;padding:22px;
+  backdrop-filter:blur(3px);
+}
+.hero-art figcaption{font-size:12.5px;color:#a9b1c4;margin-top:12px;line-height:1.6;}
+
+/* stats strip */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);margin-top:-30px;position:relative;z-index:5;
+  box-shadow:0 14px 36px -22px rgba(26,35,56,.4);
+  overflow:hidden;
+}
+.stat{padding:20px 18px;border-right:1px solid var(--line);}
+.stat:last-child{border-right:none;}
+.stat b{display:block;font-size:23px;color:var(--ink);letter-spacing:.5px;}
+.stat span{font-size:13px;color:var(--muted);}
+
+/* sections */
+section{padding:62px 0;}
+.sec-head{max-width:44em;margin-bottom:34px;}
+.sec-head .tag{
+  font-size:12.5px;letter-spacing:2px;color:var(--accent-deep);
+  font-weight:700;text-transform:uppercase;
+}
+.sec-head h2{
+  font-size:clamp(23px,3.2vw,30px);font-weight:800;
+  margin:8px 0 12px;letter-spacing:.4px;line-height:1.35;
+}
+.sec-head p{color:var(--ink-soft);font-size:15.5px;}
+
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:24px 22px;
+  transition:.22s;position:relative;
+}
+.card:hover{transform:translateY(-3px);box-shadow:0 18px 32px -24px rgba(26,35,56,.5);border-color:#cfd3dd;}
+.card .ico{
+  width:42px;height:42px;border-radius:11px;
+  background:#fdf3d9;display:flex;align-items:center;justify-content:center;
+  margin-bottom:16px;
+}
+.card h3{font-size:17px;margin-bottom:9px;font-weight:700;}
+.card p{font-size:14.5px;color:var(--ink-soft);}
+
+/* split block */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+.prose p{margin-bottom:16px;color:var(--ink-soft);font-size:15.5px;}
+.prose strong{color:var(--ink);}
+.checklist{list-style:none;margin-top:18px;}
+.checklist li{
+  position:relative;padding-left:30px;margin-bottom:12px;
+  font-size:15px;color:var(--ink-soft);
+}
+.checklist li::before{
+  content:"";position:absolute;left:0;top:6px;
+  width:16px;height:16px;border-radius:5px;
+  background:var(--accent);
+  clip-path:polygon(14% 46%,0 62%,40% 100%,100% 20%,84% 6%,38% 66%);
+}
+.panel{
+  background:var(--ink);color:#e7e9f0;border-radius:18px;padding:28px 26px;
+  position:sticky;top:84px;
+}
+.panel h3{font-size:17px;margin-bottom:16px;color:var(--accent);letter-spacing:.5px;}
+.panel ol{list-style:none;counter-reset:step;}
+.panel ol li{
+  counter-increment:step;position:relative;padding-left:38px;
+  margin-bottom:16px;font-size:14.5px;color:#c7ccda;line-height:1.65;
+}
+.panel ol li::before{
+  content:counter(step,decimal-leading-zero);
+  position:absolute;left:0;top:0;font-size:13px;font-weight:700;
+  color:#20180a;background:var(--accent);border-radius:7px;
+  width:26px;height:26px;display:flex;align-items:center;justify-content:center;
+}
+
+/* FAQ */
+.faq{background:#efeee8;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.faq-list{display:grid;gap:12px;max-width:860px;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;
+}
+details[open]{border-color:#d3c7a2;}
+summary{
+  cursor:pointer;font-weight:700;font-size:15.5px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"+";color:var(--accent-deep);font-size:20px;font-weight:400;line-height:1;}
+details[open] summary::after{content:"–";}
+details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);}
+
+/* download */
+.download{
+  background:linear-gradient(150deg,#232f4a,#1a2338);
+  color:#f4f3ee;border-radius:20px;padding:40px 36px;
+  display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;
+}
+.download h2{font-size:23px;margin-bottom:8px;}
+.download p{font-size:14.5px;color:#c2c8d6;max-width:42em;}
+.btn-download{
+  background:var(--accent);color:#20180a;pointer-events:none;
+  opacity:.95;padding:12px 28px;border-radius:11px;font-weight:700;font-size:15px;
+}
+
+/* footer */
+footer.site{
+  background:#141c2e;color:#aeb5c6;padding:40px 0 28px;font-size:13.5px;
+  margin-top:0;
+}
+.foot-grid{display:flex;justify-content:space-between;gap:26px;flex-wrap:wrap;align-items:flex-start;}
+.foot-brand{display:flex;align-items:center;gap:10px;color:#f4f3ee;font-weight:700;font-size:16px;margin-bottom:10px;}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;}
+.foot-links a:hover{color:var(--accent);}
+.copy{margin-top:24px;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);color:#7d8496;font-size:12.5px;}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .hero-art{order:-1;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .split{grid-template-columns:1fr;gap:30px;}
+  .panel{position:static;}
+  .stats{grid-template-columns:1fr 1fr;}
+  .stat:nth-child(2){border-right:none;}
+  .stat:nth-child(1),.stat:nth-child(2){border-bottom:1px solid var(--line);}
+}
+@media (max-width:600px){
+  body{font-size:15.5px;}
+  .nav-inner{padding:11px 0;}
+  nav.main ul{gap:2px;}
+  nav.main a{padding:5px 9px;font-size:13.5px;}
+  .hero{padding:42px 0 52px;}
+  .cards{grid-template-columns:1fr;}
+  section{padding:46px 0;}
+  .download{padding:28px 22px;}
+  .stats{margin-top:-22px;}
+  .stat{padding:16px 14px;}
+  .stat b{font-size:20px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-inner">
+    <div class="brand">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="15" stroke="#f0b429" stroke-width="5"/>
+          <circle cx="32" cy="32" r="6" fill="#f0b429"/>
+          <path d="M12 32h10M42 32h10" stroke="#f0b429" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span>鉴黄师</span>
+    </div>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#work">工作内容</a></li>
+        <li><a href="#standard">审核标准</a></li>
+        <li><a href="#career">岗位要求</a></li>
+        <li><a href="#faq">常见疑问</a></li>
+        <li><a href="#download">资料下载</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">内容安全 · 职业认知</span>
+        <h1>鉴黄师</h1>
+        <p class="lead">鉴黄师是互联网内容安全链条上的一线岗位，负责依据平台规则识别并处置涉黄等违规内容。这个页面围绕鉴黄师的日常工作、判断标准与职业现实展开，帮助你在短时间内建立对这份工作的完整认识。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#work">了解鉴黄师工作</a>
+          <a class="btn btn-ghost" href="#faq">查看常见疑问</a>
+        </div>
+      </div>
+      <figure class="hero-art">
+        <svg viewBox="0 0 320 200" width="100%" height="auto" role="img" aria-label="内容审核工作示意图">
+          <rect x="0" y="0" width="320" height="200" rx="14" fill="#2b3856"/>
+          <rect x="26" y="30" width="120" height="88" rx="8" fill="#3b4a6e"/>
+          <rect x="38" y="44" width="96" height="10" rx="5" fill="#5a6a92"/>
+          <rect x="38" y="62" width="72" height="8" rx="4" fill="#5a6a92"/>
+          <rect x="38" y="78" width="86" height="8" rx="4" fill="#5a6a92"/>
+          <circle cx="246" cy="74" r="34" fill="none" stroke="#f0b429" stroke-width="5"/>
+          <circle cx="246" cy="74" r="13" fill="#f0b429"/>
+          <path d="M220 74h-16M288 74h-16" stroke="#f0b429" stroke-width="5" stroke-linecap="round"/>
+          <rect x="26" y="136" width="268" height="10" rx="5" fill="#3b4a6e"/>
+          <rect x="26" y="156" width="180" height="10" rx="5" fill="#3b4a6e"/>
+        </svg>
+        <figcaption>审核台示意：画面识别、规则比对与处置记录，是鉴黄师每天的固定动作。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b>识别</b><span>涉黄图像与视频</span></div>
+      <div class="stat"><b>比对</b><span>平台内容规则</span></div>
+      <div class="stat"><b>处置</b><span>拦截、下架与标记</span></div>
+      <div class="stat"><b>记录</b><span>审核日志与申诉复核</span></div>
+    </div>
+  </div>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Work</span>
+        <h2>鉴黄师每天在做什么</h2>
+        <p>鉴黄师的工作并不只是“看图”，而是把平台规则转化成可执行的判断，再落实到具体的内容处置上。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98f0f" stroke-width="1.9" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/>
+            </svg>
+          </div>
+          <h3>内容筛查</h3>
+          <p>对用户上传的图片、短视频和直播截帧进行批量筛查，先由系统过滤，再由鉴黄师复核边界内容，判定是否属于违规。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98f0f" stroke-width="1.9" stroke-linecap="round">
+              <path d="M4 6h16M4 12h10M4 18h13"/><circle cx="19" cy="17" r="3"/>
+            </svg>
+          </div>
+          <h3>规则比对</h3>
+          <p>依据平台的内容安全规范区分暴露、暗示、擦边等不同等级，鉴黄师需要把模糊描述拆成可逐条对照的判断依据。</p>
+        </article>
+        <article class="card">
+          <div class="ico">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c98f0f" stroke-width="1.9" stroke-linecap="round">
+              <path d="M12 3l8 4v6c0 5-3.5 7.5-8 8-4.5-.5-8-3-8-8V7z"/><path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>处置与复核</h3>
+          <p>对确认违规的内容执行下架、限流或封禁，并保留审核记录；当用户申诉时，由鉴黄师参与复核，说明判定理由。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="standard" style="background:#efeee8;border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap split">
+      <div class="prose">
+        <div class="sec-head" style="margin-bottom:20px;">
+          <span class="tag">Standard</span>
+          <h2>鉴黄师如何判断内容是否违规</h2>
+        </div>
+        <p>鉴黄师的判断建立在平台规则之上，而不是个人好恶。同一个画面，在不同业务场景下可能有不同结论，因此鉴黄师需要先确认内容所属场景，再套用对应标准。</p>
+        <p><strong>看主体与意图：</strong>重点判断画面是否以性暗示或色情展示为主要目的，而非单纯依据皮肤暴露面积。</p>
+        <p><strong>区分等级：</strong>一般分为明显违规、边缘擦边和正常内容三类，边缘内容往往是鉴黄师耗时最多的部分。</p>
+        <p><strong>结合上下文：</strong>医学、教育、艺术等场景下的内容需要单独评估，鉴黄师会参考类目与用户标注信息再做判断。</p>
+        <ul class="checklist">
+          <li>是否有明确的性行为或性器官展示</li>
+          <li>是否以挑逗、暗示为主要表达目的</li>
+          <li>内容所处场景是否具备合理豁免条件</li>
+          <li>是否存在未成年人相关的高风险信号</li>
+        </ul>
+      </div>
+      <aside class="panel">
+        <h3>一名鉴黄师的典型审核流程</h3>
+        <ol>
+          <li>接收系统分发的待审内容，确认内容类型与所属业务线。</li>
+          <li>调取对应类目的审核细则，明确本批内容的判定边界。</li>
+          <li>逐条查看画面与文字信息，标记可疑点并记录判断依据。</li>
+          <li>给出通过、限流或下架的处置结论，同步进入抽检队列。</li>
+          <li>对申诉内容重新复核，必要时升级给内容安全负责人。</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section id="career">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Career</span>
+        <h2>做鉴黄师需要具备什么</h2>
+        <p>鉴黄师岗位门槛看似不高，但对稳定性、规则理解和心理承受力有实际要求。</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>规则理解力</h3>
+          <p>能快速读懂内容安全规范，把文字条款对应到具体画面，并在大量重复判断中保持一致标准。</p>
+        </article>
+        <article class="card">
+          <h3>专注与耐心</h3>
+          <p>鉴黄师每天面对成百上千条内容，长时间保持注意力集中是基本功，漏判和误判都会被抽检记录。</p>
+        </article>
+        <article class="card">
+          <h3>心理调适能力</h3>
+          <p>长期接触违规内容会带来情绪消耗，正规团队通常安排轮岗、心理疏导与休息机制，鉴黄师也需要主动管理状态。</p>
+        </article>
+      </div>
+      <div class="prose" style="margin-top:34px;max-width:52em;">
+        <p>从职业路径看，鉴黄师往往属于内容审核体系中的基础岗位，向上可以转向内容安全策略、审核培训、风控运营等方向。随着平台对内容治理的要求提高，鉴黄师所积累的规则判断经验，会成为进入内容安全领域的实用起点。</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">FAQ</span>
+        <h2>关于鉴黄师的常见疑问</h2>
+        <p>把访问者最常问的几个问题集中回答，减少对鉴黄师这份工作的误解。</p>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>鉴黄师是正式职业吗？</summary>
+          <p>鉴黄师是内容审核岗位的通俗叫法，在招聘中常以“内容审核员”“内容安全专员”等名称出现，工作内容围绕违规内容识别与处置展开。</p>
+        </details>
+        <details>
+          <summary>鉴黄师只看色情内容吗？</summary>
+          <p>不完全是。鉴黄师的核心职责是涉黄内容识别，但实际工作中也会接触暴力、低俗、违法信息等其他违规类型，具体范围由平台规则决定。</p>
+        </details>
+        <details>
+          <summary>鉴黄师的判断会出错吗？</summary>
+          <p>会。边界内容的判定存在主观空间，因此团队通常采用多人抽检、申诉复核和定期培训来控制偏差，鉴黄师个人也需要对判定结果负责。</p>
+        </details>
+        <details>
+          <summary>想从事鉴黄师需要什么条件？</summary>
+          <p>一般要求熟悉网络内容生态、能接受排班、具备基本规则阅读理解能力；部分平台会要求通过内容安全考核后再上岗。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="download">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>鉴黄师岗位认知资料</h2>
+          <p>整理鉴黄师的工作流程、判定要点与常见疑问，适合准备了解或应聘内容审核岗位的人先行阅读。</p>
+        </div>
+        <a href="#" class="btn-download" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="15" stroke="#f0b429" stroke-width="5"/>
+            <circle cx="32" cy="32" r="6" fill="#f0b429"/>
+            <path d="M12 32h10M42 32h10" stroke="#f0b429" stroke-width="5" stroke-linecap="round"/>
+          </svg>
+          鉴黄师
+        </div>
+        <p>关注内容审核一线岗位，讲清鉴黄师的日常工作与判断标准。</p>
+      </div>
+      <div class="foot-links">
+        <a href="#work">工作内容</a>
+        <a href="#standard">审核标准</a>
+        <a href="#career">岗位要求</a>
+        <a href="#faq">常见疑问</a>
+      </div>
+    </div>
+    <div class="copy">© 2025 鉴黄师 · 内容仅用于职业认知参考，具体标准以各平台公布规范为准。</div>
+  </div>
+</footer>
+
+</body>
+</html>
